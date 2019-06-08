@@ -1,11 +1,9 @@
-import { fetchVideos } from "../api/youtube.js";
-
 function isVideoLoadingReducer(isVideoLoading = false, action) {
-  if (action.type == "FETCH_VIDEOS") {
+  if (action.type === "FETCH_VIDEOS") {
     return true;
   }
 
-  if (action.type == "VIDEOS_LOADED") {
+  if (action.type === "VIDEOS_LOADED") {
     return false;
   }
   return isVideoLoading;

@@ -5,7 +5,9 @@ class Menu extends React.Component {
   render() {
     return (
       <div>
-        <h2 className="text-danger">MyTube</h2>
+        <h2 className="text-danger">
+          <span className="oi oi-play-circle"> MyTube</span>
+        </h2>
         <hr />
         <ul className="list-group">
           <li className="list-group-item bg-danger text-white">Menu</li>

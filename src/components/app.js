@@ -1,12 +1,12 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 
 import { store } from "../store/store.js";
-import Videos from "./Videos";
 import Menu from "./menu.js";
 import Trending from "./trending";
 import Search from "./search";
+import VideoPlayer from "./videoPlayer";
 
 class App extends React.Component {
   render() {
@@ -21,6 +21,7 @@ class App extends React.Component {
               <div className="col-md-9">
                 <Route path="/" exact={true} component={Trending} />
                 <Route path="/search" component={Search} />
+                <Route path="/player/:videoId" component={VideoPlayer} />
               </div>
             </div>
           </div>

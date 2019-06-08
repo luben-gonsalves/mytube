@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { stateMapper } from "../store/store.js";
 
@@ -8,13 +9,14 @@ class VideosComponent extends React.Component {
     return this.props.videos.map(v => {
       return (
         <div key={v.etag} className="col-md-4">
-          <a target="blank" href={`https://youtube.com/watch?v=${v.id}`}>
+          {/* <a target="blank" href={`https://youtube.com/watch?v=${v.id}`} /> */}
+          <Link to={`/player/${v.id.videoId}`}>
             <img
               className="img-fluid"
               src={v.snippet.thumbnails.high.url}
               alt={v.snippet.title}
             />
-          </a>
+          </Link>
           <small>
             {v.snippet.title} by <em>{v.snippet.channelTitle}</em>
           </small>
