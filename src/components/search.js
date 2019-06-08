@@ -35,7 +35,7 @@ class SearchComponent extends React.Component {
   render() {
     return (
       <div>
-        <h2>Search Video on myTube</h2>
+        <h2 className="text-danger">Search Video on myTube</h2>
         <hr />
         <div className="form-row">
           <div className="col">
@@ -49,8 +49,8 @@ class SearchComponent extends React.Component {
             Search
           </button>
           <br />
-          <Videos />
         </div>
+        <Videos />
       </div>
     );
   }
