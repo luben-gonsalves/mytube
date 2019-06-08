@@ -3,18 +3,34 @@ import { connect } from "react-redux";
 import { stateMapper } from "../store/store.js";
 
 class VideoPlayerComponent extends React.Component {
+  componentDidMount() {
+    this.props.dispatch({
+      type: "FETCH_VIDEO_DATA",
+      videoId: this.props.match.params.videoId
+    });
+  }
+
+  rednerTitle() {
+    if (!this.props.currentPlayerVideo.snippet) {
+      return "Loading...";
+    } else {
+      return this.props.currentPlayerVideo.snippet.title;
+    }
+  }
+
   render() {
     return (
       <div>
-        <h2>Title goes here</h2>
+        <h3 className="text-danger">{this.rednerTitle()}</h3>
         <hr />
-        <div class="embed-responsive embed-responsive-16by9">
+        <div className="embed-responsive embed-responsive-16by9">
           <iframe
-            class="embed-responsive-item"
+            className="embed-responsive-item"
             src={`https://www.youtube.com/embed/${
               this.props.match.params.videoId
             }?rel=0`}
-            allowfullscreen
+            allowFullScreen
+            title={this.props.match.params.videoId}
           />
         </div>
       </div>

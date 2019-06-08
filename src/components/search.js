@@ -46,7 +46,7 @@ class SearchComponent extends React.Component {
             />
           </div>
           <button onClick={this.buttonClicked} className="btn btn-danger btn-lg">
-            <span class="oi oi-magnifying-glass " />
+            <span className="oi oi-magnifying-glass " />
           </button>
           <br />
         </div>

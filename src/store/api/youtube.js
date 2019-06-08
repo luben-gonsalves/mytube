@@ -40,5 +40,23 @@ function fetchVideos(store, action) {
       });
   }
 }
+function fetchOneVideo(store, action) {
+  let url = `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${
+    action.videoId
+  }&key=${MYTUBE_CONFIG.YOUTUBE_API_KEY}`;
+  fetch(url)
+    .then(function(data) {
+      return data.json();
+    })
+    .then(function(response) {
+      store.dispatch({
+        type: "VIDEOS_DATA_LOADED",
+        videoData: response.items[0]
+      });
+    })
+    .catch(function(err) {
+      console.log("fetch error ==>", err);
+    });
+}
 
-export { fetchVideos };
+export { fetchVideos, fetchOneVideo };
