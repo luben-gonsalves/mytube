@@ -12,7 +12,6 @@ function videosReducer(videos = [], action) {
 
   if (action.type == "VIDEOS_LOADED") {
     videos = action.videos;
-    console.log(videos);
   }
   return videos;
 }
