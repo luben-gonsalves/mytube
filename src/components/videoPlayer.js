@@ -10,6 +10,12 @@ class VideoPlayerComponent extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    this.props.dispatch({
+      type: "CLEAR_VIDEO_DATA"
+    });
+  }
+
   rednerTitle() {
     if (!this.props.currentPlayerVideo.snippet) {
       return "Loading...";
@@ -32,6 +38,14 @@ class VideoPlayerComponent extends React.Component {
             allowFullScreen
             title={this.props.match.params.videoId}
           />
+        </div>
+        <div className="row">
+          <div className="col-md-8">
+            <p>
+              {this.props.currentPlayerVideo.snippet &&
+                this.props.currentPlayerVideo.snippet.description}
+            </p>
+          </div>
         </div>
       </div>
     );

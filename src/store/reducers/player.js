@@ -5,6 +5,9 @@ function currentPlayerVideo(currentVideoData = {}, action) {
   if (action.type === "FETCH_VIDEO_DATA") {
     fetchOneVideo(store, action);
   }
+  if (action.type === "CLEAR_VIDEO_DATA") {
+    return {};
+  }
 
   if (action.type === "VIDEOS_DATA_LOADED") {
     return action.videoData;
