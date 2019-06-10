@@ -10,7 +10,12 @@ function currentPlayerVideo(currentVideoData = {}, action) {
   }
 
   if (action.type === "VIDEOS_DATA_LOADED") {
-    return action.videoData;
+    let newState = action.videoData;
+    newState.snippet.showDescription = action.videoData.snippet.description.slice(
+      0,
+      400
+    );
+    return newState;
   }
   return currentVideoData;
 }

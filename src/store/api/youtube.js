@@ -59,4 +59,23 @@ function fetchOneVideo(store, action) {
     });
 }
 
-export { fetchVideos, fetchOneVideo };
+function fetchComments(store, action) {
+  let url = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${
+    action.videoId
+  }&key=${MYTUBE_CONFIG.YOUTUBE_API_KEY}`;
+  fetch(url)
+    .then(function(data) {
+      return data.json();
+    })
+    .then(function(response) {
+      store.dispatch({
+        type: "COMMENTS_LOADED",
+        comments: response.items
+      });
+    })
+    .catch(function(err) {
+      console.log("fetch error ==>", err);
+    });
+}
+
+export { fetchVideos, fetchOneVideo, fetchComments };
