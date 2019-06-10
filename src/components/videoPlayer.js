@@ -103,9 +103,14 @@ class VideoPlayerComponent extends React.Component {
         <div className="row">
           <div className="col-md-8">{this.renderDescription()}</div>
         </div>
-
+        <hr />
         <div className="row">
           <div className="col-md-8">
+            <h4>
+              {this.props.currentPlayerVideo.statistics &&
+                this.props.currentPlayerVideo.statistics.commentCount}{" "}
+              Comments
+            </h4>
             <Comments videoId={this.props.match.params.videoId} />
           </div>
         </div>
