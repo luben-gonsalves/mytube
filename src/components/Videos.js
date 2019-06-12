@@ -10,7 +10,7 @@ class VideosComponent extends React.Component {
       return (
         <div key={v.etag} className="col-md-4">
           {/* <a target="blank" href={`https://youtube.com/watch?v=${v.id}`} /> */}
-          <Link to={`/player/${v.id.videoId}`}>
+          <Link to={`/app/player/${v.id.videoId}`}>
             <img
               className="img-fluid"
               src={v.snippet.thumbnails.high.url}

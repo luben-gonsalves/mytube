@@ -11,7 +11,6 @@ function fetchVideos(store, action) {
         return data.json();
       })
       .then(function(response) {
-        console.log(response);
         store.dispatch({
           type: "VIDEOS_LOADED",
           videos: response.items

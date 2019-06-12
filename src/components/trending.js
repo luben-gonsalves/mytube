@@ -17,9 +17,7 @@ class TrendingComponent extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h2 className="text-danger">Trending Videos</h2>
-        <hr />
+      <div className="mt-4">
         <Videos />
       </div>
     );
