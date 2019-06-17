@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 import { store } from "../store/store.js";
 import Menu from "./menu.js";
@@ -9,6 +9,7 @@ import Search from "./search";
 import VideoPlayer from "./videoPlayer";
 import Profile from "./profile.js";
 import Logout from "./logout.js";
+import PlaylistComponent from "./createPlaylist";
 
 class App extends React.Component {
   render() {
@@ -23,6 +24,10 @@ class App extends React.Component {
               <Route path="/app" exact={true} component={Trending} />
               <Route path="/app/search" component={Search} />
               <Route path="/app/player/:videoId" component={VideoPlayer} />
+              <Route
+                path="/app/playlists/create"
+                component={PlaylistComponent}
+              />
               <Route path="/app/profile" component={Profile} />
               <Route path="/app/logout" component={Logout} />
             </div>

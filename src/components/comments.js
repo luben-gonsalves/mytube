@@ -16,6 +16,7 @@ class CommentsComponent extends React.Component {
           <img
             src={x.snippet.topLevelComment.snippet.authorProfileImageUrl}
             className="mr-3"
+            alt=""
           />
           <div className="media-body">
             <h5 className="mt-0">

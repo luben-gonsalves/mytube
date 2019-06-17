@@ -32,6 +32,7 @@ class Login extends React.Component {
               buttonText="Login"
               onSuccess={this.googleCallback}
               onFailure={this.googleCallback}
+              scope="https://www.googleapis.com/auth/youtube"
             />
           </div>
         </div>
